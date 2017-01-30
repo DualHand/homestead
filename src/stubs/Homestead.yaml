@@ -1,7 +1,7 @@
 ---
 ip: "192.168.10.10"
-memory: 2048
-cpus: 1
+memory: 4096
+cpus: 2
 provider: virtualbox
 
 authorize: ~/.ssh/id_rsa.pub
@@ -14,11 +14,15 @@ folders:
       to: /home/vagrant/Code
 
 sites:
-    - map: homestead.app
-      to: /home/vagrant/Code/Laravel/public
+    - map: laravel.app
+      to: /home/vagrant/Code/laravel/public
+    - map: cookbook.app
+      to: /home/vagrant/Code/ar-cookbook/web
+      type: symfony
 
 databases:
     - homestead
+    - cookbook_web
 
 # blackfire:
 #     - id: foo
